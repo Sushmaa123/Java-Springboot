@@ -10,7 +10,7 @@ pipeline {
     stages {
         stage('git checkout') {
             steps {
-             git 'https://github.com/Sushmaa123/Java-Springboot.git'
+             git 'https://github.com/suhas-14/Java-Springboot.git'
             }
         }
          stage('compile') {
@@ -45,8 +45,8 @@ pipeline {
             steps {
              script {
                 withDockerRegistry(credentialsId: 'docker-cred', toolName: 'docker') {
-                    sh 'docker tag ci-cd sushmagowda321/dev:1.0'
-                    sh 'docker push sushmagowda321/dev:1.0'
+                    sh 'docker tag ci-cd suhas8/dev:1.0'
+                    sh 'docker push suhas8/dev:1.0'
                   }
               }
             }
@@ -75,7 +75,7 @@ pipeline {
     post {
         always {
             echo 'slack Notification.'
-            slackSend channel: '#general',
+            slackSend channel: '#ci-cd-pipeline',
             color: COLOR_MAP [currentBuild.currentResult],
             message: "*${currentBuild.currentResult}:* Job ${env.JOB_NAME} build ${env.BUILD_NUMBER} \n More info at: ${env.BUILD_URl}"
             
