@@ -1,16 +1,11 @@
 version: '3.0'
 services:
-  barista-service:
-    image: sushmagowda321/baristacafe:1.0
+  cal-service:
+    image: suhas8/cal-app
     ports:
       - 11:80
 
   health-service:
-    image: sushmagowda321/healthapp:1.0
+    image: suhas8/healthapp
     ports:
       - 12:80
-
-  finance-service:
-   image: sushmagowda321/financeapp:1.0
-   ports:
-     - 13:80
