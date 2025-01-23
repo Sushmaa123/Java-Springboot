@@ -8,7 +8,7 @@ passwd sonarqube
 
 su - sonarqube
 
-sudo wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-LATEST_VERSION.zip
+wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-9.4.0.54424.zip
 
 unzip *
 
