@@ -14,7 +14,6 @@ pipeline {
                 sh 'mvn package'
             }
         }
-        }
         stage('build') {
             steps {
                 sh 'mvn package'
@@ -31,7 +30,6 @@ post {
             )
         }
     }
-
 }
 
        
